@@ -1,4 +1,3 @@
-
 name: Codespace 24/7
 
 on:
@@ -10,14 +9,14 @@ on:
 
 jobs:
   run_soul_workflow:
-     runs-on: ubuntu-22.04
-
+    runs-on: ubuntu-22.04
     steps:
       - name: Check out the code
         uses: actions/checkout@v2
 
-      - name: binary by @Atinnn_00
+      - name: Make bgmi binary executable
         run: chmod +x bgmi
+
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -27,6 +26,5 @@ jobs:
         run: |
           pip install telebot pymongo aiohttp
 
-      - name: Run soul.py
+      - name: Run m.py
         run: python3 m.py
-        
